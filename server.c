@@ -7,6 +7,8 @@
 #include <string.h>
 #define PORT 8080
 
+typedef void (* cmd)(void);
+
 static void    ft_strclr(char s[])
 {
     int i;
@@ -16,6 +18,33 @@ static void    ft_strclr(char s[])
         s[i++] = 0;
 }
 
+/************************command implementation******************/
+
+void    open_browser(void)
+{
+    char *str = "osascript -e \'open location \"http://www.google.com\"\'";
+    system(str);
+}
+
+void    nothing(void)
+{
+    printf("unknown command\n");
+}
+
+/************************command recognation*********************/
+
+cmd     define_command(char *command)
+{
+    if (!strcmp(command, "BROWSER"))
+        return (open_browser);
+    return (nothing);
+}
+void    execute_command(cmd command)
+{
+    command();
+}
+
+/****************************************************************/
 int main(int argc, char const *argv[])
 {
     int server_fd, new_socket, valread;
@@ -23,6 +52,7 @@ int main(int argc, char const *argv[])
     int opt = 1;
     int addrlen = sizeof(address);
     char buffer[1024] = {0};
+    char cmd[1024] = {0};
     char *hello = "Hello from server";
       
     // Creating socket file descriptor
@@ -58,9 +88,15 @@ int main(int argc, char const *argv[])
         }
             valread = read( new_socket , buffer, 1024);
             printf("%s\n",buffer );
+            execute_command(define_command(buffer));
+            sprintf(cmd, "osascript -e \'say \"%s\" using \"Victoria\"\'", buffer);
+            system(cmd);
             ft_strclr(buffer);
     }
     send(new_socket , hello , strlen(hello) , 0 );
     printf("Hello message sent\n");
+
+    // char buffer[1024] = {0};
+    // execute_command(define_command(buffer));
     return 0;
 }

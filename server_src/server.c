@@ -1,22 +1,4 @@
-// Server side C/C++ program to demonstrate Socket programming
-#include <unistd.h>
-#include <stdio.h>
-#include <sys/socket.h>
-#include <stdlib.h>
-#include <netinet/in.h>
-#include <string.h>
-#define PORT 8080
-
-typedef void (* cmd)(void);
-
-static void    ft_strclr(char s[])
-{
-    int i;
-
-    i = 0;
-    while (i < 1024)
-        s[i++] = 0;
-}
+#include "server.h"
 
 /************************command implementation******************/
 
@@ -92,12 +74,7 @@ int main(int argc, char const *argv[])
             execute_command(define_command(buffer));
             // sprintf(cmd, "osascript -e \'say \"%s\" using \"Victoria\"\'", buffer);
             // system(cmd);
-            ft_strclr(buffer);
+            memset(buffer, 0, 1024);
     }
-    send(new_socket , hello , strlen(hello) , 0 );
-    printf("Hello message sent\n");
-
-    // char buffer[1024] = {0};
-    // execute_command(define_command(buffer));
     return 0;
 }

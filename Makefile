@@ -24,6 +24,9 @@ SERVER_OBJS = $(addprefix $(DIR_SERVER_OBJ)/,$(SRC_SERVER:.c=.o))
 SRC_CLIENT = 
 
 SRC_CLIENT += client.c
+SRC_CLIENT += init_sphinx.c
+SRC_CLIENT += mic.c
+SRC_CLIENT += send_to_server.c
 
 CLIENT_SRCS = $(addprefix $(DIR_CLIENT_SRC)/,$(SRC_CLIENT))
 CLIENT_OBJS = $(addprefix $(DIR_CLIENT_OBJ)/,$(SRC_CLIENT:.c=.o))

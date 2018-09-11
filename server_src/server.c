@@ -22,8 +22,9 @@ static void    ft_strclr(char s[])
 
 void    open_browser(void)
 {
-    char *str = "osascript -e \'open location \"http://www.google.com\"\'";
-    system(str);
+    printf("Open Browser\n");
+    // char *str = "osascript -e \'open location \"http://www.google.com\"\'";
+    // system(str);
 }
 
 void    nothing(void)
@@ -89,8 +90,8 @@ int main(int argc, char const *argv[])
             valread = read( new_socket , buffer, 1024);
             printf("%s\n",buffer );
             execute_command(define_command(buffer));
-            sprintf(cmd, "osascript -e \'say \"%s\" using \"Victoria\"\'", buffer);
-            system(cmd);
+            // sprintf(cmd, "osascript -e \'say \"%s\" using \"Victoria\"\'", buffer);
+            // system(cmd);
             ft_strclr(buffer);
     }
     send(new_socket , hello , strlen(hello) , 0 );

@@ -65,19 +65,19 @@ char const *decoded_speech;
 /****************************************************************************************/
 int main(int argc, char *argv[]) {
 
-config = cmd_ln_init(NULL, ps_args(), TRUE,
-          "-hmm", MODELDIR "/en-us/en-us",
-          "-lm",  "./lang_models/assistant.lm",
-          "-dict", "./lang_models/assistant.dic",
-          NULL);
+// config = cmd_ln_init(NULL, ps_args(), TRUE,
+//           "-hmm", MODELDIR "/en-us/en-us",
+//           "-lm",  "./lang_models/assistant.lm",
+//           "-dict", "./lang_models/assistant.dic",
+//           NULL);
 
-   // config = cmd_ln_init(NULL, ps_args(), TRUE,
-   //           "-hmm", MODELDIR "/en-us/en-us",
-   //                 "-lm", MODELDIR "/en-us/en-us.lm.bin",
-   //                 "-dict", MODELDIR "/en-us/cmudict-en-us.dict",
-   //                 NULL);
+   config = cmd_ln_init(NULL, ps_args(), TRUE,
+             "-hmm", MODELDIR "/en-us/en-us",
+                   "-lm", MODELDIR "/en-us/en-us.lm.bin",
+                   "-dict", MODELDIR "/en-us/cmudict-en-us.dict",
+                   NULL);
   ps = ps_init(config);                                                // initialize the pocketsphinx decoder
-  ad = ad_open_dev("sysdefault", (int32) cmd_ln_float32_r(config, "-samprate")); // open default microphone at default samplerate
+  ad = ad_open_dev(NULL, (int32) cmd_ln_float32_r(config, "-samprate")); // open default microphone at default samplerate
   while(1){                                                           
     decoded_speech = recognize_from_microphone();       // call the function to capture and decode speech           
     printf("You Said: *%s*\n", decoded_speech);      // send decoded speech to screen

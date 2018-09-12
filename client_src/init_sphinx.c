@@ -10,6 +10,6 @@ t_sphinx	init_sphinx(void)
              "-dict", MODELDIR "/en-us/cmudict-en-us.dict",
              NULL);
     ret.ps = ps_init(ret.config);                                                // initialize the pocketsphinx decoder
-    ret.ad = ad_open_dev(NULL, (int32) cmd_ln_float32_r(ret.config, "-samprate")); // open default microphone at default samplerate
+    ret.ad = ad_open_dev("sysdefault", (int32) cmd_ln_float32_r(ret.config, "-samprate")); // open default microphone at default samplerate
     return (ret);
 }

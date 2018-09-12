@@ -6,7 +6,9 @@ CLIENT = client
 COMP = gcc
 
 FLAGS += -Wall -Wextra -Werror
-SPHINX_FLAGS = -DMODELDIR=\"`pkg-config --variable=modeldir pocketsphinx`\" `pkg-config --cflags --libs pocketsphinx sphinxbase`
+SPHINX_FLAGS = -DMODELDIR=\"`pkg-config --variable=modeldir pocketsphinx`\"
+COMPFLAGS = `pkg-config --cflags pocketsphinx sphinxbase`
+LINLFLAGS = `pkg-config --libs pocketsphinx sphinxbase`
 
 DIR_SERVER_SRC = server_src
 DIR_SERVER_OBJ = server_obj
@@ -17,6 +19,9 @@ DIR_INC = ./includes
 SRC_SERVER = 
 
 SRC_SERVER += server.c
+SRC_SERVER += define_command.c
+SRC_SERVER += commands.c
+SRC_SERVER += execute_command.c
 
 SERVER_SRCS = $(addprefix $(DIR_SERVER_SRC)/,$(SRC_SERVER))
 SERVER_OBJS = $(addprefix $(DIR_SERVER_OBJ)/,$(SRC_SERVER:.c=.o))
@@ -37,7 +42,7 @@ $(SERVER): $(SERVER_OBJS)
 	@$(COMP) -o $(SERVER) $(SERVER_OBJS) -I $(DIR_INC)
 
 $(CLIENT): $(CLIENT_OBJS)
-	@$(COMP) -o $(CLIENT) $(CLIENT_OBJS) $(SPHINX_FLAGS) -I $(DIR_INC)
+	@$(COMP) -o $(CLIENT) $(CLIENT_OBJS) $(LINLFLAGS) -I $(DIR_INC)
 
 $(DIR_SERVER_OBJ)/%.o: $(DIR_SERVER_SRC)/%.c
 	@mkdir -p $(DIR_SERVER_OBJ)
@@ -45,7 +50,7 @@ $(DIR_SERVER_OBJ)/%.o: $(DIR_SERVER_SRC)/%.c
 
 $(DIR_CLIENT_OBJ)/%.o: $(DIR_CLIENT_SRC)/%.c
 	@mkdir -p $(DIR_CLIENT_OBJ)
-	@$(COMP) -c $(SPHINX_FLAGS) -I $(DIR_INC) -o $@ -c $<
+	@$(COMP) -c $(SPHINX_FLAGS) -I $(DIR_INC) $(COMPFLAGS) -o $@ -c $<
 
 clean:
 	@rm -rf $(DIR_SERVER_OBJ)

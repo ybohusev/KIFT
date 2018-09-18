@@ -6,8 +6,8 @@ t_sphinx	init_sphinx(void)
 
 	ret.config = cmd_ln_init(NULL, ps_args(), TRUE,
              "-hmm", MODELDIR "/en-us/en-us",
-             "-lm", MODELDIR "/en-us/en-us.lm.bin",
-             "-dict", MODELDIR "/en-us/cmudict-en-us.dict",
+             "-lm", "./lang_models/meeseeks_model.lm",
+             "-dict",  "./lang_models/meeseeks_model.dic",
              NULL);
     ret.ps = ps_init(ret.config);                                                // initialize the pocketsphinx decoder
     ret.ad = ad_open_dev("sysdefault", (int32) cmd_ln_float32_r(ret.config, "-samprate")); // open default microphone at default samplerate

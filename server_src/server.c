@@ -40,10 +40,9 @@ int main(int argc, char const *argv[])
             exit(EXIT_FAILURE);
         }
             valread = read( new_socket , buffer, 1024);
-            printf("%s\n",buffer );
-            execute_command(define_command(buffer));
-            sprintf(cmd, "osascript -e \'say \"%s\" using \"Victoria\"\'", buffer);
-            system(cmd);
+            execute_command(define_command(buffer), buffer);
+            // sprintf(cmd, "osascript -e \'say \"%s\" using \"Victoria\"\'", buffer);
+            // system(cmd);
             memset(buffer, 0, 1024);
     }
     return 0;

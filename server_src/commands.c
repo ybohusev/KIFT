@@ -1,115 +1,116 @@
 #include "server.h"
 
-void	set_alarm(void)
+void	set_alarm(int fd)
 {
-    printf("Mr. MEESEEKS: Alarm is ready to set\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: Alarm is ready to set", fd, 0);
     system("osascript -e \'say \"Alarm is ready to set\" using \"Victoria\"\'");
 }
 
-void	set_timer(void)
+void	set_timer(int fd)
 {
-    printf("Mr. MEESEEKS: Timer is ready to set\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: Timer is ready to set", fd, 0);
     system("osascript -e \'say \"Timer is ready to set\" using \"Victoria\"\'");
 }
 
-void	lights_on(void)
+void	lights_on(int fd)
 {
-    printf("Mr. MEESEEKS: Lights is on\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: Lights is on", fd, 0);
     system("osascript -e \'say \"Lights is on\" using \"Victoria\"\'");
 }
 
-void	lights_off(void)
+void	lights_off(int fd)
 {
-    printf("Mr. MEESEEKS: Lights is off\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: Lights is off", fd, 0);
     system("osascript -e \'say \"Lights is off\" using \"Victoria\"\'");
 }
 
-void	email(void)
+void	email(int fd)
 {
-    printf("Mr. MEESEEKS: Lets send an email\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: Lets send an email", fd, 0);
     system("osascript -e \'say \"Lets send an email\" using \"Victoria\"\'");
 }
 
-void	events(void)
+void	events(int fd)
 {
-    printf("Mr. MEESEEKS: I'll check your events\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: I'll check your events", fd, 0);
     system("osascript -e \'say \"I'll check your events\" using \"Victoria\"\'");
 }
 
-void	weather(void)
+void	weather(int fd)
 {
-    printf("Mr. MEESEEKS: I'll check weather in your region\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: I'll check weather in your region", fd, 0);
     system("osascript -e \'say \"I'll check weather in your region\" using \"Victoria\"\'");
 }
 
-void	who_connected(void)
+void	who_connected(int fd)
 {
-    printf("Mr. MEESEEKS: Lets see who is connected\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: Lets see who is connected", fd, 0);
     system("osascript -e \'say \"Lets see who is connected\" using \"Victoria\"\'");
 }
 
-void	where_connected(void)
+void	where_connected(int fd)
 {
-    printf("Mr. MEESEEKS: Lets see where we connected\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: Lets see where we connected", fd, 0);
     system("osascript -e \'say \"Lets see where we connected\" using \"Victoria\"\'");
 }
 
-void	music(void)
+void	music(int fd)
 {
-    printf("Mr. MEESEEKS: Yeah lets rock\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: Yeah lets rock", fd, 0);
     system("osascript -e \'say \"Yeah lets rock\" using \"Victoria\"\'");
 }
 
-void	close_browser(void)
+void	close_browser(int fd)
 {
-    printf("Mr. MEESEEKS: Okey I'll close the browser\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: Okey I'll close the browser", fd, 0);
     system("osascript -e \'say \"Okey I'll close the browser\" using \"Victoria\"\'");
 }
 
-void	inc_bright(void)
+void	inc_bright(int fd)
 {
-    printf("Mr. MEESEEKS: Brightness is increased\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: Brightness is increased", fd, 0);
     system("osascript -e \'say \"Brightness is increased\" using \"Victoria\"\'");
 }
 
-void	dec_bright(void)
+void	dec_bright(int fd)
 {
-    printf("Mr. MEESEEKS: Brightness is deccreased\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: Brightness is deccreased", fd, 0);
     system("osascript -e \'say \"Brightness is deccreased\" using \"Victoria\"\'");
 }
 
-void	inc_vol(void)
+void	inc_vol(int fd)
 {
-    printf("Mr. MEESEEKS: Volume is increased\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: Volume is increased", fd, 0);
     system("osascript -e \'say \"Volume is increased\" using \"Victoria\"\'");
 }
 
-void	dec_vol(void)
+void	dec_vol(int fd)
 {
-    printf("Mr. MEESEEKS: Volume is decreased\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: Volume is decreased", fd, 0);
     system("osascript -e \'say \"Volume is decreased\" using \"Victoria\"\'");
 }
 
-void	logs(void)
+void	logs(int fd)
 {
-    printf("Mr. MEESEEKS: Okey lets see logs\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: Okey lets see logs", fd, 0);
     system("osascript -e \'say \"Okey lets see logs\" using \"Victoria\"\'");
+    system("cat log");
 }
 
-void	mees(void)
+void	mees(int fd)
 {
-    printf("Mr. MEESEEKS: I'm Mr. Meeseeks! Look at me!\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: I'm Mr. Meeseeks! Look at me!", fd, 0);
     system("osascript -e \'say \"I'm Mr. Meeseeks! Look at me!\" using \"Victoria\"\'");
 }
 
-void	open_browser(void)
+void	open_browser(int fd)
 {
-    printf("Mr. MEESEEKS: Okey I'll open the browser\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: Okey I'll open the browser", fd, 0);
     system("osascript -e \'say \"Okey I'll open the browser\" using \"Victoria\"\'");
 }
 
-void	nothing(void)
+void	nothing(int fd)
 {
-    printf("Mr. MEESEEKS: Ohhh sorry I dont know how to do it\n");
+    inter_logs("\x1b[33m", "Mr. MEESEEKS: Ohhh sorry I dont know how to do it", fd, 0);
     system("osascript -e \'say \"Ohhh sorry I dont know how to do it\" using \"Victoria\"\'");
 }

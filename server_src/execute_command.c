@@ -1,9 +1,9 @@
 #include "server.h"
 
-void    execute_command(cmd command, char* str)
+void    execute_command(cmd command, char* str, int fd)
 {
-	printf("\x1b[32mYOU: %s\n", str);
-	printf("\x1b[33m");
-    command();
-    printf("\x1b[31mB========================================D\x1b[0m\n");
+	inter_logs("\x1b[32mYOU: ", str, fd, 1);
+    command(fd);
+    inter_logs("\x1b[31m", "B========================================D", fd, 0);
+    // printf("\x1b[0m");
 }

@@ -22,6 +22,7 @@ SRC_SERVER += server.c
 SRC_SERVER += define_command.c
 SRC_SERVER += commands.c
 SRC_SERVER += execute_command.c
+SRC_SERVER += log.c
 
 SERVER_SRCS = $(addprefix $(DIR_SERVER_SRC)/,$(SRC_SERVER))
 SERVER_OBJS = $(addprefix $(DIR_SERVER_OBJ)/,$(SRC_SERVER:.c=.o))

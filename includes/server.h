@@ -3,31 +3,31 @@
 
 #include "common.h"
 
-typedef void	(* cmd)(int);
+typedef char*	(* cmd)(int);
 typedef struct	sockaddr_in t_sockaddr_in;
 
 cmd				define_command(char *command);
 void			execute_command(cmd command, char *str, int fd);
-void			inter_logs(char *color, char *str, int fd, int flag);
+void			inter_logs(char *str, char *answer, int fd);
 
-void			open_browser(int fd);
-void			nothing(int fd);
-void			set_alarm(int fd);
-void			set_timer(int fd);
-void			lights_on(int fd);
-void			lights_off(int fd);
-void			email(int fd);
-void			events(int fd);
-void			weather(int fd);
-void			who_connected(int fd);
-void			where_connected(int fd);
-void			music(int fd);
-void			close_browser(int fd);
-void			inc_bright(int fd);
-void			dec_bright(int fd);
-void			inc_vol(int fd);
-void			dec_vol(int fd);
-void			logs(int fd);
-void			mees(int fd);
+char*			open_browser(int fd);
+char*			nothing(int fd);
+char*			set_alarm(int fd);
+char*			set_timer(int fd);
+char*			lights_on(int fd);
+char*			lights_off(int fd);
+char*			email(int fd);
+char*			events(int fd);
+char*			weather(int fd);
+char*			who_connected(int fd);
+char*			where_connected(int fd);
+char*			music(int fd);
+char*			close_browser(int fd);
+char*			inc_bright(int fd);
+char*			dec_bright(int fd);
+char*			inc_vol(int fd);
+char*			dec_vol(int fd);
+char*			logs(int fd);
+char*			mees(int fd);
 
 #endif

@@ -23,9 +23,9 @@ const char * recognize_from_microphone(ps_decoder_t *ps, ad_rec_t *ad)
         {                                            // if speech has ended and the utt_started flag is true 
             ps_end_utt(ps);                          // then mark the end of the utterance
             ad_stop_rec(ad);                         // stop recording
-            hyp = ps_get_hyp(ps, NULL );             // query pocketsphinx for "hypothesis" of decoded statement
-            return hyp;                              // the function returns the hypothesis
-            break;                                   // exit the while loop and return to main
+            hyp = ps_get_hyp(ps, NULL);             // query pocketsphinx for "hypothesis" of decoded statement
+            return (hyp);                              // the function returns the hypothesis
+            break ;                                   // exit the while loop and return to main
         }
     }
 }

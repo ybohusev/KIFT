@@ -7,7 +7,6 @@ int main(int argc, char const *argv[])
     t_sockaddr_in address;
     int addrlen = sizeof(address);
     char buffer[1024] = {0};
-    char cmd[1024] = {0};
     int fd;
     
     fd = open("logs", O_CREAT | O_RDWR | O_APPEND, S_IREAD | S_IWRITE);  

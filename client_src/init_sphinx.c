@@ -9,7 +9,8 @@ t_sphinx	init_sphinx(void)
              "-lm", "./lang_models/meeseeks_model.lm",
              "-dict",  "./lang_models/meeseeks_model.dic",
              NULL);
-    ret.ps = ps_init(ret.config);                                                // initialize the pocketsphinx decoder
-    ret.ad = ad_open_dev("sysdefault", (int32) cmd_ln_float32_r(ret.config, "-samprate")); // open default microphone at default samplerate
+	err_set_logfile("sphinx_log");
+    ret.ps = ps_init(ret.config);
+    ret.ad = ad_open_dev("sysdefault", (int32) cmd_ln_float32_r(ret.config, "-samprate"));
     return (ret);
 }

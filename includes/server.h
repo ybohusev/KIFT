@@ -7,7 +7,7 @@ typedef char*	(* cmd)(int);
 typedef struct	sockaddr_in t_sockaddr_in;
 
 cmd				define_command(char *command);
-void			execute_command(cmd command, char *str, int fd);
+char* 			execute_command(cmd command, char *str, int fd, char* answer);
 void			inter_logs(char *str, char *answer, int fd);
 
 char*			open_browser(int fd);

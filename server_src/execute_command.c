@@ -1,9 +1,9 @@
 #include "server.h"
 
-void    execute_command(cmd command, char* str, int fd)
+char*    execute_command(cmd command, char* str, int fd, char* answer)
 {
-	char buffer[1024] = {0};
-
-    strcpy(buffer, command(fd));
-    inter_logs(str, buffer, fd);
+	memset(answer, 0, 1024);
+    strcpy(answer, command(fd));
+    inter_logs(str, answer, fd);
+    return(answer);
 }

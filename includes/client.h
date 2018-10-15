@@ -25,7 +25,7 @@ typedef struct				s_sock
 t_sock						init_sock(void);
 t_sphinx					init_sphinx(void);
 const 						char* recognize_from_microphone(ps_decoder_t *ps, ad_rec_t *ad);
-int							send_command(char const *decoded_speech);
-void						interface(char const *command);
+int							send_command(char const *decoded_speech, char *answer);
+void						interface(char const *command, char* answer);
 
 #endif

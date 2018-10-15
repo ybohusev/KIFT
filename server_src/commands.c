@@ -2,13 +2,13 @@
 
 char*	set_alarm(int fd)
 {
-    system("osascript -e \'say \"Alarm is ready to set\" using \"Victoria\"\'");
+    // system("osascript -e \'say \"Alarm is ready to set\" using \"Victoria\"\'");
     return ("Mr. MEESEEKS: Alarm is ready to set");
 }
 
 char*	set_timer(int fd)
 {
-    system("osascript -e \'say \"Timer is ready to set\" using \"Victoria\"\'");
+    // system("osascript -e \'say \"Timer is ready to set\" using \"Victoria\"\'");
     return ("Mr. MEESEEKS: Timer is ready to set");
 }
 
@@ -44,19 +44,19 @@ char*	weather(int fd)
 
 char*	who_connected(int fd)
 {
-    system("osascript -e \'say \"Lets see who is connected\" using \"Victoria\"\'");
+    // system("osascript -e \'say \"Lets see who is connected\" using \"Victoria\"\'");
     return ("Mr. MEESEEKS: Lets see who is connected");
 }
 
 char*	where_connected(int fd)
 {
-    system("osascript -e \'say \"Lets see where we connected\" using \"Victoria\"\'");
+    // system("osascript -e \'say \"Lets see where we connected\" using \"Victoria\"\'");
     return ("Mr. MEESEEKS: Lets see where we connected");
 }
 
 char*	music(int fd)
 {
-    system("osascript -e \'say \"Yeah lets rock\" using \"Victoria\"\'");
+    // system("osascript -e \'say \"Yeah lets rock\" using \"Victoria\"\'");
     return ("Mr. MEESEEKS: Yeah lets rock");
 }
 
@@ -92,14 +92,14 @@ char*	dec_vol(int fd)
 
 char*	logs(int fd)
 {    
-    system("osascript -e \'say \"Okey lets see logs\" using \"Victoria\"\'");
-    system("cat log");
+    // system("osascript -e \'say \"Okey lets see logs\" using \"Victoria\"\'");
+    system("open logs");
     return ("Mr. MEESEEKS: Okey lets see logs");
 }
 
 char*	mees(int fd)
 {
-    system("osascript -e \'say \"I'm Mr. Meeseeks! Look at me!\" using \"Victoria\"\'");
+    // system("osascript -e \'say \"I'm Mr. Meeseeks! Look at me!\" using \"Victoria\"\'");
     return ("Mr. MEESEEKS: I'm Mr. Meeseeks! Look at me!");
 }
 
@@ -111,7 +111,7 @@ char*	open_browser(int fd)
 
 char*	nothing(int fd)
 {
-    system("osascript -e \'say \"Ohhh sorry I dont know how to do it\" using \"Victoria\"\'");
+    // system("osascript -e \'say \"Ohhh sorry I dont know how to do it\" using \"Victoria\"\'");
     return ("Mr. MEESEEKS: Ohhh sorry I dont know how to do it");
 }
 

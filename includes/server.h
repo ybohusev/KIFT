@@ -29,5 +29,7 @@ char*			inc_vol(int fd);
 char*			dec_vol(int fd);
 char*			logs(int fd);
 char*			mees(int fd);
+char*   		check_browser_history(int fd);
+char*   		remove_trash(int fd);
 
 #endif

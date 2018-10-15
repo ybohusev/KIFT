@@ -14,31 +14,31 @@ char*	set_timer(int fd)
 
 char*	lights_on(int fd)
 {
-    system("osascript -e \'say \"Lights is on\" using \"Victoria\"\'");
+    system("osascript ./scripts/lights_on.scpt");
     return ("Mr. MEESEEKS: Lights is on");
 }
 
 char*	lights_off(int fd)
 {
-    system("osascript -e \'say \"Lights is off\" using \"Victoria\"\'");
+    system("osascript ./scripts/lights_off.scpt");
     return ("Mr. MEESEEKS: Lights is off");
 }
 
 char*   email(int fd)
 {
-    system("osascript -e \'say \"Lets send an email\" using \"Victoria\"\'");
+    system("osascript ./scripts/email.scpt");
     return ("Mr. MEESEEKS: Lets send an email");
 }
 
 char*	events(int fd)
 {
-    system("osascript -e \'say \"I'll check your events\" using \"Victoria\"\'");
+    system("osascript ./scripts/events.scpt");
     return ("Mr. MEESEEKS: I'll check your events");
 }
 
 char*	weather(int fd)
 {
-    system("osascript -e \'say \"I'll check weather in your region\" using \"Victoria\"\'");
+    system("osascript ./scripts/weather.scpt");
     return ("Mr. MEESEEKS: I'll check weather in your region");
 }
 
@@ -62,31 +62,31 @@ char*	music(int fd)
 
 char*	close_browser(int fd)
 {
-    system("osascript -e \'say \"Okey I'll close the browser\" using \"Victoria\"\'");
+    system("osascript ./scripts/close_browser.scpt");
     return ("Mr. MEESEEKS: Okey I'll close the browser");
 }
 
 char*	inc_bright(int fd)
 {
-    system("osascript -e \'say \"Brightness is increased\" using \"Victoria\"\'");
+    system("osascript ./scripts/inc_bright.scpt");
     return ("Mr. MEESEEKS: Brightness is increased");
 }
 
 char*	dec_bright(int fd)
 {
-    system("osascript -e \'say \"Brightness is deccreased\" using \"Victoria\"\'");
-    return ("Mr. MEESEEKS: Brightness is deccreased");  
+    system("osascript ./scripts/dec_bright.scpt");
+    return ("Mr. MEESEEKS: Brightness is decreased");  
 }
 
 char*	inc_vol(int fd)
 {
-    system("osascript -e \'say \"Volume is increased\" using \"Victoria\"\'");
+    system("osascript ./scripts/increase_volume.scpt");
     return ("Mr. MEESEEKS: Volume is increased"); 
 }
 
 char*	dec_vol(int fd)
 {
-    system("osascript -e \'say \"Volume is decreased\" using \"Victoria\"\'");
+    system("osascript ./scripts/decrease_volume.scpt");
     return ("Mr. MEESEEKS: Volume is decreased");
 }
 
@@ -105,7 +105,7 @@ char*	mees(int fd)
 
 char*	open_browser(int fd)
 {
-    system("osascript -e \'say \"Okey I'll open the browser\" using \"Victoria\"\'");
+    system("osascript ./scripts/open_browser.scpt");
     return ("Mr. MEESEEKS: Okey I'll open the browser");
 }
 
@@ -113,4 +113,16 @@ char*	nothing(int fd)
 {
     system("osascript -e \'say \"Ohhh sorry I dont know how to do it\" using \"Victoria\"\'");
     return ("Mr. MEESEEKS: Ohhh sorry I dont know how to do it");
+}
+
+char*   remove_trash(int fd)
+{
+    system("osascript ./scripts/remove_trash.scpt");
+    return ("Mr. MEESEEKS: No more trash, boss.");
+}
+
+char*   check_browser_history(int fd)
+{
+    system("osascript ./scripts/check_browser_history.scpt");
+    return ("Mr. MEESEEKS: Here is the history, MY LORD.");
 }

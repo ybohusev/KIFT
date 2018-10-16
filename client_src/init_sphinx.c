@@ -6,8 +6,8 @@ t_sphinx	init_sphinx(void)
 
 	ret.config = cmd_ln_init(NULL, ps_args(), TRUE,
              "-hmm", MODELDIR "/en-us/en-us",
-             "-lm", "./lang_models/meeseeks_model.lm",
-             "-dict",  "./lang_models/meeseeks_model.dic",
+             "-lm", "./lang_models/meeseeks_model.lm.bin",
+             "-dict",  "./lang_models/meeseeks_model.dict",
              NULL);
 	err_set_logfile("sphinx_log");
     ret.ps = ps_init(ret.config);

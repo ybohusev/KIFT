@@ -19,7 +19,7 @@ cmd				define_command(char *command);
 void 			execute_command(cmd command, char *buffer, int fd, char *answer);
 void			inter_logs(char *str, char *answer, int fd);
 t_sock			init_sock(void);
-void			listen_client(t_sock sock);
+void			listen_client(t_sock *sock);
 
 char*			open_browser(int fd);
 char*			nothing(int fd);

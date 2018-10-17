@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
     fd = open("logs", O_CREAT | O_RDWR | O_APPEND, S_IREAD | S_IWRITE);  
     while (1)
      {
-        listen_client(sock);
+        listen_client(&sock);
         sock.valread = read(sock.new_socket, buffer, 1024);
         execute_command(define_command(buffer), buffer, fd, answer);
         send(sock.new_socket, answer, strlen(answer), 0);

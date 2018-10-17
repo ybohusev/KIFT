@@ -1,6 +1,6 @@
 #include "client.h"
 
-void	interface(char const *command, char* answer)
+void	interface(char const *command, char *answer)
 {
 	if (*command != 0)
 	{

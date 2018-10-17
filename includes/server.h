@@ -6,9 +6,20 @@
 typedef char*	(* cmd)(int);
 typedef struct	sockaddr_in t_sockaddr_in;
 
+typedef struct				s_sock
+{
+	int						server_fd;
+	int						new_socket;
+	int						valread;
+	t_sockaddr_in			address;
+	int						addrlen;
+}							t_sock;		
+
 cmd				define_command(char *command);
-char* 			execute_command(cmd command, char *str, int fd, char* answer);
+void 			execute_command(cmd command, char *buffer, int fd, char *answer);
 void			inter_logs(char *str, char *answer, int fd);
+t_sock			init_sock(void);
+void			listen_client(t_sock sock);
 
 char*			open_browser(int fd);
 char*			nothing(int fd);

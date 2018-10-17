@@ -5,7 +5,7 @@ int send_command(char const *decoded_speech, char *answer)
     t_sock  sock;
 
     memset(answer, 0, 1024);
-    if (*decoded_speech != 0)
+    if (decoded_speech != NULL && *decoded_speech != 0)
     {
         sock = init_sock();  
         if (connect(sock.sock, (struct sockaddr *)&sock.serv_addr,

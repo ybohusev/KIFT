@@ -1,0 +1,26 @@
+set alarm
+set timer
+turn on lights
+turn off lights
+send email
+check events
+check weather
+who is connected
+where is connected
+play music
+open player
+search the web
+check history
+show history
+see history
+mister meeseeks
+open browser
+close browser
+increase brightness
+decrease brightness
+increase volume
+decrease volume
+see logs
+show logs
+remove trash
+show cameras

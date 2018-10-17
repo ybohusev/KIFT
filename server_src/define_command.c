@@ -38,6 +38,8 @@ cmd		define_command(char *command)
     		!strcmp(command, "CHECK HISTORY") || !strcmp(command, "SHOW HISTORY") ||
     		!strcmp(command, "SEE HISTORY"))
         return (logs);
+    else if (!strcmp(command, "REMOVE TRASH"))
+        return (remove_trash);
     if (!strcmp(command, "MISTER MEESEEKS"))
         return (mees);
     return (nothing);

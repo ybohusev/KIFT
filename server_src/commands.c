@@ -14,7 +14,7 @@ char*	set_timer(int fd)
 
 char*	lights_on(int fd)
 {
-    system("osascript ./scripts/lights_on.scpt");
+    system("osascript ./scripts/lights_on.scpt \'say \"Lights are on\" using \"Victoria\"\'");
     return ("Mr. MEESEEKS: Lights is on");
 }
 

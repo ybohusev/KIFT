@@ -2,7 +2,7 @@
 
 const char * recognize_from_microphone(ps_decoder_t *ps, ad_rec_t *ad)
 {
-    int16 adbuf[4096];                               // buffer array to hold audio data
+    int16 adbuf[2048];                               // buffer array to hold audio data
     uint8 utt_started;                               // flags for tracking active speech - has speech started?
     uint8 in_speech;                                 //- is speech currently happening?
     int32 k;                                         // holds the number of frames in the audio buffer
@@ -12,11 +12,10 @@ const char * recognize_from_microphone(ps_decoder_t *ps, ad_rec_t *ad)
     ps_start_utt(ps);                                // mark the start of the utterance
     utt_started = FALSE;                             // clear the utt_started flag
 
-    int d = 0;
     while(1)
     {
                                       
-        if ((k = ad_read(ad, adbuf, 4096)) < 0)      // capture the number of frames in the audio buffer
+        if ((k = ad_read(ad, adbuf, 2048)) < 0)      // capture the number of frames in the audio buffer
         {
             printf("ERROR READ K\n");
             return (NULL);

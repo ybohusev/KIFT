@@ -2,9 +2,9 @@
 
 cmd		define_command(char *command)
 {
-    if (!strcmp(command, "SET AN ALARM"))
+    if (!strcmp(command, "SET ALARM"))
         return (set_alarm);
-    else if (!strcmp(command, "SET AN TIMER"))
+    else if (!strcmp(command, "SET TIMER"))
         return (set_timer);
     else if (!strcmp(command, "TURN ON LIGHTS"))
         return (lights_on);

@@ -5,9 +5,9 @@ t_sphinx	init_sphinx(void)
 	t_sphinx	ret;
 
 	ret.config = cmd_ln_init(NULL, ps_args(), TRUE,
-             "-hmm", MODELDIR "/en-us/en-us",
+             "-hmm", "./lang_models/en-us-adapt",
              "-lm", "./lang_models/3538.lm.bin",
-             "-dict",  "./lang_models/3538.dic",
+             "-dict",  "./lang_models/3538.dict",
              NULL);
 	err_set_logfile("sphinx_log");
     ret.ps = ps_init(ret.config);

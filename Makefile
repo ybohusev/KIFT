@@ -62,6 +62,8 @@ clean:
 	@rm -rf $(DIR_CLIENT_OBJ)
 
 fclean: clean
+	@rm	-f logs
+	@rm	-f sphinx_log
 	@rm -f $(SERVER)
 	@rm -f $(CLIENT)
 

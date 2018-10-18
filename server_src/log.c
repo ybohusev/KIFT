@@ -13,5 +13,5 @@ void	inter_logs(char *str, char *answer, int fd)
 	write(fd, "\n", 1);
 	write(fd, answer, strlen(answer));
 	write(fd, "\n", 1);
-	write(fd, "B========================================D\n", 43);
+	write(fd, "===================================================\n", 53);
 }

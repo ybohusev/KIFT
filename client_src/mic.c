@@ -37,7 +37,7 @@ const char * recognize_from_microphone(ps_decoder_t *ps, ad_rec_t *ad)
             //ad_stop_rec(ad);                         // stop recording
             hyp = ps_get_hyp(ps, &k);             // query pocketsphinx for "hypothesis" of decoded statement
             printf("%d: %s\n", k, hyp);
-            //return (hyp);                            // the function returns the hypothesis
+            return (hyp);                            // the function returns the hypothesis
             if (ps_start_utt(ps) < 0)
                 E_FATAL("FAILED TO START UTTERANCE\n");
             //return (hyp);

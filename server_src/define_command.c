@@ -34,10 +34,17 @@ cmd		define_command(char *command)
         return (inc_vol);
     else if (!strcmp(command, "DECREASE VOLUME"))
         return (dec_vol);
-    else if (!strcmp(command, "SEE LOGS") || !strcmp(command, "SHOW LOGS") ||
-    		!strcmp(command, "CHECK HISTORY") || !strcmp(command, "SHOW HISTORY") ||
-    		!strcmp(command, "SEE HISTORY"))
+    else if (!strcmp(command, "SEE LOGS") || !strcmp(command, "SHOW LOGS"))
         return (logs);
+	else if (!strcmp(command, "CHECK HISTORY") || !strcmp(command, "SHOW HISTORY") ||
+			!strcmp(command, "SEE HISTORY"))
+		return (check_browser_history);
+	else if (!strcmp(command, "PLAY NEXT"))
+		return (play_next);
+	else if (!strcmp(command, "QUIT ITUNES"))
+		return (quit_itunes);
+	else if (!strcmp(command, "STOP MUSIC"))
+		return (stop_music);
     else if (!strcmp(command, "REMOVE TRASH"))
         return (remove_trash);
     if (!strcmp(command, "MISTER MEESEEKS"))

@@ -60,6 +60,24 @@ char*	music(int fd)
     return ("Mr. MEESEEKS: Yeah lets rock");
 }
 
+char	*stop_music(int fd)
+{
+	system("osascript ./scripts/stop_music.scpt");
+	return ("Mr. MEESEEKS: No more music, MY LORD!");
+}
+
+char	*play_next(int fd)
+{
+	system("osascript ./scripts/play_next.scpt");
+	return ("Mr. MEESEEKS: Next track is here, BOSS!");
+}
+
+char	*quit_itunes(int fd)
+{
+	system("osascript ./scripts/quit_itunes.scpt");
+	return ("Mr. MEESEEKS: iTunes is dead, BOSS");
+}
+
 char*	close_browser(int fd)
 {
     system("osascript ./scripts/close_browser.scpt");
@@ -125,4 +143,10 @@ char*   check_browser_history(int fd)
 {
     system("osascript ./scripts/check_browser_history.scpt");
     return ("Mr. MEESEEKS: Here is the history, MY LORD.");
+}
+
+char	*check_traffic(int fd)
+{
+	system("osascript ./scripts/check_traffic.scpt");
+	return ("Mr. MEESEEKS: Here is the road situation, MY KING!");
 }

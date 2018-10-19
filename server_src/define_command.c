@@ -16,6 +16,8 @@ cmd		define_command(char *command)
         return (events);
     else if (!strcmp(command, "CHECK WEATHER"))
         return (weather);
+	else if (!strcmp(command, "CHECK TRAFFIC"))
+		return (check_traffic);
     else if (!strcmp(command, "WHO IS CONNECTED"))
         return (who_connected);
     else if (!strcmp(command, "WHERE IS CONNECTED"))

@@ -30,6 +30,7 @@ char*			lights_off(int fd);
 char*			email(int fd);
 char*			events(int fd);
 char*			weather(int fd);
+char			*check_traffic(int fd);
 char*			who_connected(int fd);
 char*			where_connected(int fd);
 char*			music(int fd);

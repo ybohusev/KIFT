@@ -8,6 +8,7 @@ char*	set_alarm(int fd)
 
 char*	set_timer(int fd)
 {
+    // system("./scripts/set_timer.sh");
     system("osascript -e \'say \"Timer is ready to set\" using \"Victoria\"\'");
     return ("Mr. MEESEEKS: Timer is ready to set");
 }
@@ -44,8 +45,8 @@ char*	weather(int fd)
 
 char*	who_connected(int fd)
 {
-    system("osascript -e \'say \"Lets see who is connected\" using \"Victoria\"\'");
-    return ("Mr. MEESEEKS: Lets see who is connected");
+    system("osascript -e \'say \"ybohusev\" using \"Victoria\"\'");
+    return ("Mr. MEESEEKS: ybohusev is connected");
 }
 
 char*	where_connected(int fd)
@@ -56,7 +57,7 @@ char*	where_connected(int fd)
 
 char*	music(int fd)
 {
-    system("osascript -e \'say \"Yeah lets rock\" using \"Victoria\"\'");
+    system("osascript ./scripts/play_music.scpt");
     return ("Mr. MEESEEKS: Yeah lets rock");
 }
 

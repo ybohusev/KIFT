@@ -44,14 +44,14 @@ CLIENT_OBJS = $(addprefix $(DIR_CLIENT_OBJ)/,$(SRC_CLIENT:.c=.o))
 all: $(SERVER) $(CLIENT)
 
 $(SERVER): $(SERVER_OBJS)
-	@$(COMP) -o $(SERVER) $(SERVER_OBJS) -I $(DIR_INC)
+	@$(COMP) -o $(SERVER) $(SERVER_OBJS) $(LINLFLAGS) -I $(DIR_INC)
 
 $(CLIENT): $(CLIENT_OBJS)
 	@$(COMP) -o $(CLIENT) $(CLIENT_OBJS) $(LINLFLAGS) -I $(DIR_INC)
 
 $(DIR_SERVER_OBJ)/%.o: $(DIR_SERVER_SRC)/%.c
 	@mkdir -p $(DIR_SERVER_OBJ)
-	@$(COMP) -c -I $(DIR_INC) -o $@ -c $<
+	@$(COMP) -c -I $(DIR_INC) $(COMPFLAGS) -o $@ -c $<
 
 $(DIR_CLIENT_OBJ)/%.o: $(DIR_CLIENT_SRC)/%.c
 	@mkdir -p $(DIR_CLIENT_OBJ)

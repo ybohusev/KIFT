@@ -9,7 +9,7 @@ int main(int argc, char const *argv[])
     char   answer[1024];
     
     sock = init_sock();
-    fd = open("logs", O_CREAT | O_RDWR | O_APPEND, S_IREAD | S_IWRITE);  
+    fd = open("logs", O_CREAT | O_RDWR | O_APPEND, S_IREAD | S_IWRITE);
     while (1)
      {
         listen_client(&sock);

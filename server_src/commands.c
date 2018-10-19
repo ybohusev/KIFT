@@ -2,13 +2,13 @@
 
 char*	set_alarm(int fd)
 {
-    system("osascript -e \'say \"Alarm is ready to set\" using \"Victoria\"\'");
+    system("osascript ./scripts/set_alarm.scpt 2>/dev/null \'say\"Just set it\" using \"Victoria\"\'");
     return ("Mr. MEESEEKS: Alarm is ready to set");
 }
 
 char*	set_timer(int fd)
 {
-    // system("./scripts/set_timer.sh");
+    system("osascript ./scripts/set_timer.scpt &2>/dev/null \'say\"The timer for 20 seconds is set\" using \"Victoria\"\'");
     system("osascript -e \'say \"Timer is ready to set\" using \"Victoria\"\'");
     return ("Mr. MEESEEKS: Timer is ready to set");
 }
@@ -71,6 +71,12 @@ char	*play_next(int fd)
 {
 	system("osascript ./scripts/play_next.scpt");
 	return ("Mr. MEESEEKS: Next track is here, BOSS!");
+}
+
+char    *play_prev(int fd)
+{
+    system("osascript ./scripts/play_prev.scpt");
+    return ("Mr. MEESEEKS: Previous track just for you, BOSS!");
 }
 
 char	*quit_itunes(int fd)
@@ -136,7 +142,7 @@ char*	nothing(int fd)
 
 char*   remove_trash(int fd)
 {
-    system("osascript ./scripts/remove_trash.scpt");
+    system("osascript ./scripts/remove_trash.scpt 2>/dev/null");
     return ("Mr. MEESEEKS: No more trash, boss.");
 }
 

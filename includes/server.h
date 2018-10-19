@@ -37,6 +37,7 @@ char*			music(int fd);
 char			*stop_music(int fd);
 char			*quit_itunes(int fd);
 char			*play_next(int fd);
+char                    *play_prev(int fd);
 char*			close_browser(int fd);
 char*			inc_bright(int fd);
 char*			dec_bright(int fd);

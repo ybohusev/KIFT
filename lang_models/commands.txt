@@ -12,6 +12,7 @@ play music
 stop music
 quit itunes
 play next
+play previous
 open player
 search the web
 check history
@@ -28,3 +29,4 @@ see logs
 show logs
 remove trash
 show cameras
+party

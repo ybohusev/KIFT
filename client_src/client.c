@@ -6,8 +6,6 @@ int main(int argc, char *argv[])
     char const  *decoded_speech;
     char       answer[1024];
 
-    //sphinx = init_sphinx();
-    // answer = (char*)malloc(1024);
     while(1)
     {
       sphinx = init_sphinx();  
@@ -16,6 +14,5 @@ int main(int argc, char *argv[])
       interface(decoded_speech, answer);
       ad_close(sphinx.ad);
     }
-    //ad_close(sphinx.ad);
     return (0);
 }

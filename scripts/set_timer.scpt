@@ -1,3 +1,4 @@
-#!/bin/bash
-
-sleep 10 && afplay ../music/1.mp3
+set input to "5"
+delay input
+say "beep beep beep beep beep beep beep beep beep beep beep beep beep beep beep beep beep beep beep beep beep" using "Victoria"
+beep 20

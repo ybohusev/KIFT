@@ -5,9 +5,13 @@
 <s> SEND EMAIL </s>
 <s> CHECK EVENTS </s>
 <s> CHECK WEATHER </s>
+<s> CHECK TRAFFIC </s>
 <s> WHO IS CONNECTED </s>
 <s> WHERE IS CONNECTED </s>
 <s> PLAY MUSIC </s>
+<s> STOP MUSIC </s>
+<s> QUIT ITUNES </s>
+<s> PLAY NEXT </s>
 <s> OPEN PLAYER </s>
 <s> SEARCH THE WEB </s>
 <s> CHECK HISTORY </s>

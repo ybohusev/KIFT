@@ -5,9 +5,13 @@ turn off lights
 send email
 check events
 check weather
+check traffic
 who is connected
 where is connected
 play music
+stop music
+quit itunes
+play next
 open player
 search the web
 check history

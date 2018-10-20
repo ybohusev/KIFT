@@ -14,7 +14,7 @@
 
 char	*set_alarm(int fd)
 {
-	system("osascript ./scripts/set_alarm.scpt 2>/dev/null");
+	system("osascript ./scripts/set_alarm.scpt &2>/dev/null");
 	system("osascript -e \'say \"Alarm is ready to set\" using \"Victoria\"\'");
 	return ("Mr. MEESEEKS: Alarm is ready to set");
 }
@@ -43,7 +43,7 @@ char	*lights_off(int fd)
 
 char	*email(int fd)
 {
-	system("osascript ./scripts/email.scpt");
+	system("osascript ./scripts/email.scpt &>/dev/null");
 	system("osascript -e \'say \"Lets send an email\" using \"Victoria\"\'");
 	return ("Mr. MEESEEKS: Lets send an email");
 }

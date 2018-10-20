@@ -14,30 +14,29 @@
 
 char	*set_alarm(int fd)
 {
-	system("osascript ./scripts/set_alarm.scpt &>/dev/null");
 	system("osascript -e \'say \"Alarm is ready to set\" using \"Victoria\"\'");
+	system("osascript ./scripts/set_alarm.scpt &>/dev/null");
 	return ("Mr. MEESEEKS: Alarm is ready to set");
 }
 
 char	*set_timer(int fd)
 {
-	system("osascript ./scripts/set_timer.scpt &>/dev/null \
-		\'say\"The timer for 20 seconds is set\" using \"Victoria\"\'");
 	system("osascript -e \'say \"Timer is ready to set\" using \"Victoria\"\'");
+	system("osascript ./scripts/set_timer.scpt &>/dev/null");
 	return ("Mr. MEESEEKS: Timer is ready to set");
 }
 
 char	*lights_on(int fd)
 {
 	system("osascript ./scripts/lights_on.scpt &>/dev/null");
-	system("osascript -e \'say \"Lights is on\" using \"Victoria\"\'");
+	system("osascript -e \'say \"Lights are on\" using \"Victoria\"\'");
 	return ("Mr. MEESEEKS: Lights is on");
 }
 
 char	*lights_off(int fd)
 {
 	system("osascript ./scripts/lights_off.scpt &>/dev/null");
-	system("osascript -e \'say \"Lights is of\" using \"Victoria\"\'");
+	system("osascript -e \'say \"Lights are off\" using \"Victoria\"\'");
 	return ("Mr. MEESEEKS: Lights is off");
 }
 

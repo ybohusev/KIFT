@@ -15,16 +15,15 @@
 char	*events(int fd)
 {
 	system("osascript ./scripts/events.scpt &>/dev/null");
-	system("osascript -e \'say \"I'll check your events\"\
+	system("osascript -e \'say \"I\'ll check your events\"\
                 using \"Victoria\"\'");
 	return ("Mr. MEESEEKS: I'll check your events");
 }
 
 char	*weather(int fd)
 {
-	system("osascript ./scripts/weather.scpt &>/dev/null");
-	system("osascript -e \'say \"I'll check weather in your region\"\
-                using \"Victoria\"\'");
+	system("osascript ./scripts/weather.scpt");
+	system("osascript -e \'say \"I\'ll check weather in your region\"using \"Victoria\"\'");
 	return ("Mr. MEESEEKS: I'll check weather in your region");
 }
 

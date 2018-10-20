@@ -22,7 +22,7 @@ char	*logs(int fd)
 
 char	*mees(int fd)
 {
-	system("osascript -e \'say \"I'm Mr. Meeseeks! Look at me!\" \
+	system("osascript -e \'say \"I\'m Mr. Meeseeks! Look at me!\" \
 			using \"Victoria\"\'");
 	return ("Mr. MEESEEKS: I'm Mr. Meeseeks! Look at me!");
 }
@@ -30,7 +30,7 @@ char	*mees(int fd)
 char	*open_browser(int fd)
 {
 	system("osascript ./scripts/open_browser.scpt &>/dev/null");
-	return ("Mr. MEESEEKS: Okey I'll open the browser");
+	return ("Mr. MEESEEKS: Okey I\'ll open the browser");
 }
 
 char	*nothing(int fd)

@@ -14,9 +14,9 @@
 
 char	*close_browser(int fd)
 {
-	system("osascript ./scripts/close_browser.scpt &>/dev/null");
-	system("osascript -e \'say \"Okey I'll close the browser\" \
+	system("osascript -e \'say \"Okey I\'ll close the browser\" \
 			using \"Victoria\"\'");
+	system("osascript ./scripts/close_browser.scpt &>/dev/null");
 	return ("Mr. MEESEEKS: Okey I'll close the browser");
 }
 

@@ -14,8 +14,8 @@
 
 void	inter_logs(char *str, char *answer, int fd)
 {
-	time_t		t;
-	char* time_m;
+	time_t	t;
+	char	*time_m;
 
 	t = time(NULL);
 	time_m = (char*)ctime(&t);

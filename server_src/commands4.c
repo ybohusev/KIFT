@@ -16,7 +16,7 @@ char	*logs(int fd)
 {
 	system("osascript -e \'say \"Okey lets see logs\" \
 			using \"Victoria\"\'");
-	system("open logs");
+	system("open logs &>/dev/null");
 	return ("Mr. MEESEEKS: Okey lets see logs");
 }
 
@@ -29,7 +29,7 @@ char	*mees(int fd)
 
 char	*open_browser(int fd)
 {
-	system("osascript ./scripts/open_browser.scpt");
+	system("osascript ./scripts/open_browser.scpt &>/dev/null");
 	return ("Mr. MEESEEKS: Okey I'll open the browser");
 }
 
@@ -42,6 +42,6 @@ char	*nothing(int fd)
 
 char	*remove_trash(int fd)
 {
-	system("osascript ./scripts/remove_trash.scpt 2>/dev/null");
+	system("osascript ./scripts/remove_trash.scpt &>/dev/null");
 	return ("Mr. MEESEEKS: No more trash, boss.");
 }

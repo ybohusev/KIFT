@@ -14,7 +14,7 @@
 
 char	*close_browser(int fd)
 {
-	system("osascript ./scripts/close_browser.scpt");
+	system("osascript ./scripts/close_browser.scpt &>/dev/null");
 	system("osascript -e \'say \"Okey I'll close the browser\" \
 			using \"Victoria\"\'");
 	return ("Mr. MEESEEKS: Okey I'll close the browser");
@@ -22,7 +22,7 @@ char	*close_browser(int fd)
 
 char	*inc_bright(int fd)
 {
-	system("osascript ./scripts/inc_bright.scpt");
+	system("osascript ./scripts/inc_bright.scpt &>/dev/null");
 	system("osascript -e \'say \"Brightness is increased\" \
 			using \"Victoria\"\'");
 	return ("Mr. MEESEEKS: Brightness is increased");
@@ -30,7 +30,7 @@ char	*inc_bright(int fd)
 
 char	*dec_bright(int fd)
 {
-	system("osascript ./scripts/dec_bright.scpt");
+	system("osascript ./scripts/dec_bright.scpt &>/dev/null");
 	system("osascript -e \'say \"Brightness is decreased\" \
 			using \"Victoria\"\'");
 	return ("Mr. MEESEEKS: Brightness is decreased");
@@ -38,7 +38,7 @@ char	*dec_bright(int fd)
 
 char	*inc_vol(int fd)
 {
-	system("osascript ./scripts/increase_volume.scpt");
+	system("osascript ./scripts/increase_volume.scpt &>/dev/null");
 	system("osascript -e \'say \"Volume is increased\" \
 			using \"Victoria\"\'");
 	return ("Mr. MEESEEKS: Volume is increased");
@@ -46,7 +46,7 @@ char	*inc_vol(int fd)
 
 char	*dec_vol(int fd)
 {
-	system("osascript ./scripts/decrease_volume.scpt");
+	system("osascript ./scripts/decrease_volume.scpt &>/dev/null");
 	system("osascript -e \'say \"Volume is decreased\" \
 			using \"Victoria\"\'");
 	return ("Mr. MEESEEKS: Volume is decreased");

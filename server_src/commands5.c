@@ -14,13 +14,13 @@
 
 char	*check_browser_history(int fd)
 {
-	system("osascript ./scripts/check_browser_history.scpt");
+	system("osascript ./scripts/check_browser_history.scpt &>/dev/null");
 	return ("Mr. MEESEEKS: Here is the history, MY LORD.");
 }
 
 char	*check_traffic(int fd)
 {
-	system("osascript ./scripts/check_traffic.scpt");
+	system("osascript ./scripts/check_traffic.scpt &>/dev/null");
 	system("osascript -e \'say \"Here is the road situation, MY KING!\" \
 			using \"Victoria\"\'");
 	return ("Mr. MEESEEKS: Here is the road situation, MY KING!");

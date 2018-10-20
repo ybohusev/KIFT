@@ -5,6 +5,26 @@
 #include <pocketsphinx.h>
 #include <sphinxbase/ad.h>
 #include <sphinxbase/err.h>
+#include <ncurses.h>
+
+typedef struct				s_interface
+{
+    WINDOW      			*mess;
+    int						height;
+    int						weight;
+    int						cur_height;
+    int						cur_weight;
+}							t_interface;	
+
+t_interface					mess;
+
+typedef struct				s_mess
+{
+    char					*you;
+    char					*mees;
+    char					*del;
+    struct	s_mess			*next;
+}							t_mess;
 
 typedef struct				s_sphinx
 {

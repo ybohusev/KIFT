@@ -4,9 +4,10 @@ void	interface(char const *command, char *answer)
 {
 	if (*command != 0)
 	{
-		printf("\x1b[32mYOU: %s\n", command);
-		printf("\x1b[33m%s\n", answer);
-		printf("\x1b[31m=======================================================\n");
-		printf("\x1b[0m");
+		mvwprintw(mess.mess, 10, 10, "YOU: %s\n", command);
+		mvwprintw(mess.mess, 10, 10, "%s\n", answer);
+		mvwprintw(mess.mess, 10, 10, "=======================================================\n");
+		// printw("\x1b[0m");
+		wrefresh(mess.mess);
 	}
 }

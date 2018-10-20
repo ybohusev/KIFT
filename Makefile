@@ -21,11 +21,6 @@ SRC_SERVER =
 SRC_SERVER += server.c
 SRC_SERVER += define_command.c
 SRC_SERVER += commands.c
-SRC_SERVER += commands1.c
-SRC_SERVER += commands2.c
-SRC_SERVER += commands3.c
-SRC_SERVER += commands4.c
-SRC_SERVER += commands5.c
 SRC_SERVER += execute_command.c
 SRC_SERVER += log.c
 SRC_SERVER += init_sock.c
@@ -52,7 +47,7 @@ $(SERVER): $(SERVER_OBJS)
 	@$(COMP) -o $(SERVER) $(SERVER_OBJS) -I $(DIR_INC)
 
 $(CLIENT): $(CLIENT_OBJS)
-	@$(COMP) -o $(CLIENT) $(CLIENT_OBJS) $(LINLFLAGS) -I $(DIR_INC)
+	@$(COMP) -o $(CLIENT) $(CLIENT_OBJS) $(LINLFLAGS) -lncurses -I $(DIR_INC)
 
 $(DIR_SERVER_OBJ)/%.o: $(DIR_SERVER_SRC)/%.c
 	@mkdir -p $(DIR_SERVER_OBJ)

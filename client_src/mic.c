@@ -1,6 +1,6 @@
 #include "client.h"
 
-const char * recognize_from_microphone(ps_decoder_t *ps, ad_rec_t *ad)
+const char *recognize_from_microphone(ps_decoder_t *ps, ad_rec_t *ad)
 {
     int16 adbuf[4096];
     uint8 cur_vad_state;
@@ -26,13 +26,13 @@ const char * recognize_from_microphone(ps_decoder_t *ps, ad_rec_t *ad)
         vad_state = ps_get_in_speech(ps);
         if (vad_state && !cur_vad_state)
         {
-            printf("LISTENING...\n");
+            wprintw(mess.mess, "LISTENING...\n");
         }
         if (!vad_state && cur_vad_state)
         {
             ps_end_utt(ps);
             hyp = ps_get_hyp(ps, &k);
-            printf("%d: %s\n", k, hyp);
+            wprintw(mess.mess, "%d: %s\n", k, hyp);
             return (hyp);
             if (ps_start_utt(ps) < 0)
                 E_FATAL("FAILED TO START UTTERANCE\n");

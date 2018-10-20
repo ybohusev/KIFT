@@ -6,6 +6,12 @@
 typedef char*	(* cmd)(int);
 typedef struct	sockaddr_in t_sockaddr_in;
 
+typedef	enum				e_mode
+{
+	QUIET,
+	DEFAULT
+}							t_mode;
+
 typedef struct				s_sock
 {
 	int						server_fd;
@@ -14,6 +20,8 @@ typedef struct				s_sock
 	t_sockaddr_in			address;
 	int						addrlen;
 }							t_sock;		
+
+t_mode			mode;
 
 cmd				define_command(char *command);
 void 			execute_command(cmd command, char *buffer, int fd, char *answer);
@@ -47,5 +55,7 @@ char*			logs(int fd);
 char*			mees(int fd);
 char*   		check_browser_history(int fd);
 char*   		remove_trash(int fd);
+char*			quiet_mode(int fd);
+char*			default_mode(int fd);
 
 #endif

@@ -51,6 +51,10 @@ cmd		define_command(char *command)
 	return (stop_music);
     else if (!strcmp(command, "REMOVE TRASH"))
         return (remove_trash);
+    else if (!strcmp(command, "QUIET MODE"))
+        return (quiet_mode);
+    else if (!strcmp(command, "DEFAULT MODE"))
+        return (default_mode);
     if (!strcmp(command, "MISTER MEESEEKS"))
         return (mees);
     return (nothing);

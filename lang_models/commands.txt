@@ -30,3 +30,5 @@ show logs
 remove trash
 show cameras
 party
+quiet mode
+default mode

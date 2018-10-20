@@ -6,6 +6,7 @@ CHECK - Main
 CLOSE - Main 
 CONNECTED - Main 
 DECREASE - Main 
+DEFAULT - Main 
 EMAIL - Main 
 EVENTS - Main 
 HISTORY - Main 
@@ -17,6 +18,7 @@ LOGS - Main
 LtoS pronounce: verbosity is 1
 MEESEEKS - By LtoS rules
 MISTER - Main 
+MODE - Main 
 MUSIC - Main 
 NEXT - Main 
 OFF - Main 
@@ -24,6 +26,7 @@ ON - Main
 OPEN - Main 
 PLAY - Main 
 PLAYER - Main 
+QUIET - Main 
 QUIT - Main 
 REMOVE - Main 
 SEARCH - Main 

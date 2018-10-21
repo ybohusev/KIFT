@@ -20,6 +20,7 @@ void  init_ncur()
     init_pair(7, COLOR_BLACK, COLOR_BLUE);
     init_pair(8, COLOR_BLACK, COLOR_RED);
     init_pair(9, COLOR_BLACK, COLOR_CYAN);
+    init_pair(11, COLOR_YELLOW, COLOR_BLACK);
     init_pair(10, COLOR_MAGENTA, COLOR_BLACK);
     mess.height = w.ws_row;
     mess.weight = w.ws_col / 1.25;
@@ -84,7 +85,6 @@ int main(int argc, char *argv[])
     init_ncur();
     l = NULL;
     print_list_commands();
-    mvwprintw(mess.mess, 2,2,"++++++++++");
     while(1)
     {
       sphinx = init_sphinx();  

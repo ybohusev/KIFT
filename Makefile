@@ -26,6 +26,7 @@ SRC_SERVER += commands2.c
 SRC_SERVER += commands3.c
 SRC_SERVER += commands4.c
 SRC_SERVER += commands5.c
+SRC_SERVER += commands6.c
 SRC_SERVER += execute_command.c
 SRC_SERVER += log.c
 SRC_SERVER += init_sock.c

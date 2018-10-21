@@ -57,5 +57,8 @@ char*   		check_browser_history(int fd);
 char*   		remove_trash(int fd);
 char*			quiet_mode(int fd);
 char*			default_mode(int fd);
+char                    *joke(int fd);
+char                    *party(int fd);
+char                    *open_terminal(int fd);
 
 #endif

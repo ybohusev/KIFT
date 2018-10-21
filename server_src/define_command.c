@@ -73,6 +73,10 @@ cmd		define_command(char *command)
 		return (quiet_mode);
 	else if (!strcmp(command, "DEFAULT MODE"))
 		return (default_mode);
+        else if (!strcmp(command, "PARTY") || !strcmp(command, "START PARTY"))
+                return (party);
+        else if (!strcmp(command, "JOKE"))
+                return (joke);
 	if (!strcmp(command, "MISTER MEESEEKS"))
 		return (mees);
 	return (nothing);

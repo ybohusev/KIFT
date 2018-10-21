@@ -32,3 +32,5 @@ show cameras
 party
 quiet mode
 default mode
+joke
+open terminal

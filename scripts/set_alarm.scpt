@@ -19,7 +19,7 @@ increaseVolumeHandler_()
 
 -- launch iTunes and play the desired song
 tell application "iTunes" to play
-delay 60
+delay 10
 tell application "iTunes" to quit
 
 

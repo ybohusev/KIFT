@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   commands6.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bsuprun <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/10/21 23:09:44 by bsuprun           #+#    #+#             */
+/*   Updated: 2018/10/21 23:12:01 by bsuprun          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "server.h"
+
 char	*party(int fd)
 {
     system("osascript -e \'say \"Lets start the party!!!\" \
@@ -20,4 +34,12 @@ char    *open_terminal(int fd)
             using \"Victoria\"\'");
     system("osascript ./scripts/open_terminal.scpt &>/dev/null");
     return ("Mr. MEESEEKS: Terminal is ready, MY LORD!");
+}
+
+char	*show_cameras(int fd)
+{
+	system("osascript -e \'say \"Cameras are here, boss\" \
+			using \"Victoria\"'");
+	system("osascript ./scripts/show_cameras.scpt &>/dev/null");
+	return ("Mr. MEESEEKS: Cameras are here, boss!");
 }

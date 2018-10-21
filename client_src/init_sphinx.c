@@ -11,6 +11,6 @@ t_sphinx	init_sphinx(void)
              NULL);
 	err_set_logfile("sphinx_log");
     ret.ps = ps_init(ret.config);
-    ret.ad = ad_open_dev("sysdefault", (int32) cmd_ln_float32_r(ret.config, "-samprate"));
+    ret.ad = ad_open_dev(NULL, (int32) cmd_ln_float32_r(ret.config, "-samprate"));
     return (ret);
 }

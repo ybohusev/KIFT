@@ -14,9 +14,11 @@ const char *recognize_from_microphone(ps_decoder_t *ps, ad_rec_t *ad)
         E_FATAL("FAILED TO START UTTERANCE\n");
     cur_vad_state = 0;
 
+    // werase(t.mess);
     while (1)
     {
-                                      
+
+        // mvwprintw(t.mess, 2, mess.weight + 2, "LISTENING...\n");                             
         if ((k = ad_read(ad, adbuf, 4096)) < 0)
         {
             printf("ERROR READ K\n");
@@ -26,13 +28,13 @@ const char *recognize_from_microphone(ps_decoder_t *ps, ad_rec_t *ad)
         vad_state = ps_get_in_speech(ps);
         if (vad_state && !cur_vad_state)
         {
-            wprintw(mess.mess, "LISTENING...\n");
+            // mvwprintw(t.mess, 2, 2, "LISTENING...\n");
         }
         if (!vad_state && cur_vad_state)
         {
             ps_end_utt(ps);
             hyp = ps_get_hyp(ps, &k);
-            wprintw(mess.mess, "%d: %s\n", k, hyp);
+            // mvwprintw(t.mess, 3, 2, "%d: %s", k, hyp);
             return (hyp);
             if (ps_start_utt(ps) < 0)
                 E_FATAL("FAILED TO START UTTERANCE\n");

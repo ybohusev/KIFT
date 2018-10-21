@@ -28,13 +28,24 @@ const char *recognize_from_microphone(ps_decoder_t *ps, ad_rec_t *ad)
         vad_state = ps_get_in_speech(ps);
         if (vad_state && !cur_vad_state)
         {
-            // mvwprintw(t.mess, 2, 2, "LISTENING...\n");
+            wclear(help.mess);
+            wattron(help.mess, COLOR_PAIR(1));
+            wborder(help.mess, '|' , '|', '-', '-', '+', '+', '+', '+');
+            wattroff(help.mess, COLOR_PAIR(10));
+            mvwprintw(help.mess, 1, 1, "LISTENING...\n");
+            wrefresh(help.mess);
+
         }
         if (!vad_state && cur_vad_state)
         {
             ps_end_utt(ps);
             hyp = ps_get_hyp(ps, &k);
-            // mvwprintw(t.mess, 3, 2, "%d: %s", k, hyp);
+            wclear(help.mess);
+            wattron(help.mess, COLOR_PAIR(1));
+            wborder(help.mess, '|' , '|', '-', '-', '+', '+', '+', '+');
+            wattroff(help.mess, COLOR_PAIR(10));
+            mvwprintw(help.mess, 1, 1, "treatment...");
+            wrefresh(help.mess);
             return (hyp);
             if (ps_start_utt(ps) < 0)
                 E_FATAL("FAILED TO START UTTERANCE\n");

@@ -22,21 +22,30 @@ void  init_ncur()
     init_pair(9, COLOR_BLACK, COLOR_CYAN);
     init_pair(11, COLOR_YELLOW, COLOR_BLACK);
     init_pair(10, COLOR_MAGENTA, COLOR_BLACK);
-    mess.height = w.ws_row;
+
     mess.weight = w.ws_col / 1.25;
-    mess.cur_height = mess.height - 4;
-    mess.cur_weight = 2;
-    mess.mess = newwin(mess.height, mess.weight, 0, 0);
+    t.weight = w.ws_col - mess.weight;
+    help.weight = mess.weight;
+
+    mess.height = w.ws_row - 2;
+    t.height = w.ws_row;
+    help.height = 3;
+    
+    mess.mess = newwin(mess.height, mess.weight, 2, 0);
+    t.mess = newwin(t.height, t.weight, 0, mess.weight);
+    help.mess = newwin(help.height, help.weight, 0, 0);
+    
+    wattron(help.mess, COLOR_PAIR(1));
+    wborder(help.mess, '|' , '|', '-', '-', '+', '+', '+', '+');
+    wattroff(help.mess, COLOR_PAIR(10));
+    wrefresh(help.mess);
+
+    
     wattron(mess.mess, COLOR_PAIR(1));
     wborder(mess.mess, '|' , '|', '-', '-', '+', '+', '+', '+');
     wattroff(mess.mess, COLOR_PAIR(10));
     wrefresh(mess.mess);
-
-    t.height = w.ws_row;
-    t.weight = w.ws_col / 4.9;
-    t.cur_height = t.height - 4;
-    t.cur_weight = 2;
-    t.mess = newwin(t.height, t.weight, 0, mess.weight);
+    
     wattron(t.mess, COLOR_PAIR(1));
     wborder(t.mess, '|' , '|', '-', '-', '+', '+', '+', '+');
     wattroff(t.mess, COLOR_PAIR(10));

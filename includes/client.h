@@ -18,6 +18,7 @@ typedef struct				s_interface
 
 t_interface					mess;
 t_interface                 t;
+t_interface                 help;
 
 typedef struct				s_mess
 {

@@ -15,14 +15,14 @@
 char	*set_alarm(int fd)
 {
 	system("osascript -e \'say \"Alarm is ready to set\" using \"Victoria\"\'");
-	system("osascript ./scripts/set_alarm.scpt &>/dev/null");
+	system("osascript ./scripts/set_alarm.scpt & &>/dev/null");
 	return ("Mr. MEESEEKS: Alarm is ready to set");
 }
 
 char	*set_timer(int fd)
 {
 	system("osascript -e \'say \"Timer is ready to set\" using \"Victoria\"\'");
-	system("osascript ./scripts/set_timer.scpt &>/dev/null");
+	system("osascript ./scripts/set_timer.scpt & &>/dev/null");
 	return ("Mr. MEESEEKS: Timer is ready to set");
 }
 

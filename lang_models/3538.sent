@@ -12,6 +12,7 @@
 <s> STOP MUSIC </s>
 <s> QUIT ITUNES </s>
 <s> PLAY NEXT </s>
+<s> PLAY PREVIOUS </s>
 <s> OPEN PLAYER </s>
 <s> SEARCH THE WEB </s>
 <s> CHECK HISTORY </s>
@@ -28,5 +29,8 @@
 <s> SHOW LOGS </s>
 <s> REMOVE TRASH </s>
 <s> SHOW CAMERAS </s>
+<s> START PARTY </s>
 <s> QUIET MODE </s>
 <s> DEFAULT MODE </s>
+<s> JOKE </s>
+<s> OPEN TERMINAL </s>

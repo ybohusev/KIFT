@@ -1,14 +1,14 @@
-set alarm/alarm
-set timer/timer
-turn on lights/lights on
-turn off lights/lights off
-send email/email
-check events/events
-check weather/weather
-check traffic/traffic
+set alarm
+set timer
+turn on lights
+turn off lights
+send email
+check events
+check weather
+check traffic
 who is connected
 where is connected
-play music/music
+play music
 stop music
 quit itunes
 play next
@@ -16,7 +16,7 @@ play previous
 open player
 search the web
 check history
-show history/history
+show history
 see history
 mister meeseeks
 open browser
@@ -28,9 +28,9 @@ decrease volume
 see logs
 show logs
 remove trash
-show cameras/cameras
-party/start party
+show cameras
+start party
 quiet mode
 default mode
 joke
-open terminal/terminal
+open terminal

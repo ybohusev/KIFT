@@ -60,5 +60,6 @@ char			*default_mode(int fd);
 char			*joke(int fd);
 char			*party(int fd);
 char			*open_terminal(int fd);
+char			*show_cameras(int fd);
 
 #endif

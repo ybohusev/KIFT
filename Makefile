@@ -43,6 +43,11 @@ SRC_CLIENT += mic.c
 SRC_CLIENT += send_to_server.c
 SRC_CLIENT += init_sock.c
 SRC_CLIENT += interface.c
+SRC_CLIENT += print_commands.c
+SRC_CLIENT += init_ncurses.c
+SRC_CLIENT += del_windows.c
+SRC_CLIENT += lists.c
+
 
 CLIENT_SRCS = $(addprefix $(DIR_CLIENT_SRC)/,$(SRC_CLIENT))
 CLIENT_OBJS = $(addprefix $(DIR_CLIENT_OBJ)/,$(SRC_CLIENT:.c=.o))
@@ -53,7 +58,7 @@ $(SERVER): $(SERVER_OBJS)
 	@$(COMP) -o $(SERVER) $(SERVER_OBJS) -I $(DIR_INC)
 
 $(CLIENT): $(CLIENT_OBJS)
-	@$(COMP) -o $(CLIENT) $(CLIENT_OBJS) $(LINLFLAGS) -I $(DIR_INC)
+	@$(COMP) -o $(CLIENT) $(CLIENT_OBJS) $(LINLFLAGS) -lncurses -I $(DIR_INC)
 
 $(DIR_SERVER_OBJ)/%.o: $(DIR_SERVER_SRC)/%.c
 	@mkdir -p $(DIR_SERVER_OBJ)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   commands5.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsuprun <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: vonischu <vonischu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 18:41:37 by bsuprun           #+#    #+#             */
-/*   Updated: 2018/10/20 18:41:45 by bsuprun          ###   ########.fr       */
+/*   Updated: 2018/10/22 15:16:10 by vonischu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ char	*check_traffic(int fd)
 
 char	*quiet_mode(int fd)
 {
-	mode = QUIET;
+	g_mode = QUIET;
 	system("osascript -e \'say \"quiet mode is on\" using \"Victoria\"\'");
 	return ("Mr. MEESEEKS: quiet mode is on");
 }
 
 char	*default_mode(int fd)
 {
-	mode = DEFAULT;
+	g_mode = DEFAULT;
 	system("osascript -e \'say \"default mode is on\" using \"Victoria\"\'");
 	return ("Mr. MEESEEKS: default mode is on");
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybohusev <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vonischu <vonischu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/22 14:22:45 by ybohusev          #+#    #+#             */
-/*   Updated: 2018/10/22 14:22:47 by ybohusev         ###   ########.fr       */
+/*   Updated: 2018/10/22 15:15:13 by vonischu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ typedef struct				s_sock
 
 t_mode						g_mode;
 
-cmd							define_command(char *command);
-void						execute_command(cmd command, char *buffer,
+t_cmd						define_command(char *command);
+void						execute_command(t_cmd command, char *buffer,
 												int fd, char *answer);
 void						inter_logs(char *str, char *answer, int fd);
 t_sock						init_sock(void);

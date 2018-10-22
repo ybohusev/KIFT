@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   define_command.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsuprun <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: vonischu <vonischu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 18:04:07 by bsuprun           #+#    #+#             */
-/*   Updated: 2018/10/20 18:04:08 by bsuprun          ###   ########.fr       */
+/*   Updated: 2018/10/22 15:15:40 by vonischu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
 
-cmd		define_command(char *command)
+t_cmd		define_command(char *command)
 {
 	if (!strcmp(command, "SET ALARM") || !strcmp(command, "ALARM"))
 		return (set_alarm);

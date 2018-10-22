@@ -12,7 +12,7 @@
 
 #include "client.h"
 
-static void		init_std(void)
+static void	init_std(void)
 {
 	initscr();
 	noecho();
@@ -30,9 +30,17 @@ static void		init_std(void)
 	init_pair(9, COLOR_BLACK, COLOR_CYAN);
 	init_pair(11, COLOR_YELLOW, COLOR_BLACK);
 	init_pair(10, COLOR_MAGENTA, COLOR_BLACK);
-}	
+}
 
-t_windows  		init_ncur(void)
+static void	draw_bord(t_interface inter)
+{
+	wattron(inter.win, COLOR_PAIR(1));
+	wborder(inter.win, '|', '|', '-', '-', '+', '+', '+', '+');
+	wattroff(inter.win, COLOR_PAIR(10));
+	wrefresh(inter.win);
+}
+
+t_windows	init_ncur(void)
 {
 	t_windows		windows;
 	struct winsize	w;
@@ -46,19 +54,11 @@ t_windows  		init_ncur(void)
 	windows.t.height = w.ws_row;
 	windows.help.height = 3;
 	windows.mess.win = newwin(windows.mess.height, windows.mess.weight, 2, 0);
-	windows.t.win = newwin(windows.t.height, windows.t.weight, 0, windows.mess.weight);
+	windows.t.win = newwin(windows.t.height, windows.t.weight,
+						0, windows.mess.weight);
 	windows.help.win = newwin(windows.help.height, windows.help.weight, 0, 0);
-	wattron(windows.help.win, COLOR_PAIR(1));
-	wborder(windows.help.win, '|' , '|', '-', '-', '+', '+', '+', '+');
-	wattroff(windows.help.win, COLOR_PAIR(10));
-	wrefresh(windows.help.win);
-	wattron(windows.mess.win, COLOR_PAIR(1));
-	wborder(windows.mess.win, '|' , '|', '-', '-', '+', '+', '+', '+');
-	wattroff(windows.mess.win, COLOR_PAIR(10));
-	wrefresh(windows.mess.win);
-	wattron(windows.t.win, COLOR_PAIR(1));
-	wborder(windows.t.win, '|' , '|', '-', '-', '+', '+', '+', '+');
-	wattroff(windows.t.win, COLOR_PAIR(10));
-	wrefresh(windows.t.win);
+	draw_bord(windows.help);
+	draw_bord(windows.mess);
+	draw_bord(windows.t);
 	return (windows);
 }

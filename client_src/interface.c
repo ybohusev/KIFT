@@ -20,7 +20,7 @@ static void	change_coords(t_mess *l)
 	{
 		if (l->next->y < 3)
 		{
-			del_mess(l->next); 
+			del_mess(l->next);
 			l->next = NULL;
 			return ;
 		}
@@ -42,19 +42,20 @@ static void	print_mess(t_mess *l, t_interface inter)
 		wattron(inter.win, COLOR_PAIR(3));
 		mvwprintw(inter.win, l->y + 2, 2, "%s", l->del);
 		wattroff(inter.win, COLOR_PAIR(10));
-		l = l->next;		
+		l = l->next;
 	}
 }
 
-void		interface(char const *command, char *answer, t_interface inter, t_mess	**l)
+void		interface(char const *command, char *answer,
+						t_interface inter, t_mess **l)
 {
 	if (command != NULL && *command != 0)
 	{
 		wclear(inter.win);
 		wattron(inter.win, COLOR_PAIR(1));
-		wborder(inter.win, '|' , '|', '-', '-', '+', '+', '+', '+');
+		wborder(inter.win, '|', '|', '-', '-', '+', '+', '+', '+');
 		wattroff(inter.win, COLOR_PAIR(10));
-		add_mess(l, (char* const)command, answer, inter);
+		add_mess(l, (char *const)command, answer, inter);
 		change_coords(*l);
 		print_mess(*l, inter);
 	}

@@ -12,7 +12,15 @@
 
 #include "client.h"
 
-void	print_list_commands(t_interface inter)
+static int	draw_comm(t_interface inter)
+{
+	wattron(inter.win, COLOR_PAIR(4));
+	mvwprintw(inter.win, 1, (inter.weight / 2) - 7, "COMMANDS LIST:");
+	wattroff(inter.win, COLOR_PAIR(10));
+	return (open("commands.txt", O_RDONLY));
+}
+
+void		print_list_commands(t_interface inter)
 {
 	int		fd;
 	int		ret;
@@ -22,10 +30,7 @@ void	print_list_commands(t_interface inter)
 
 	count = 0;
 	ret = 0;
-	wattron(inter.win, COLOR_PAIR(4));
-	mvwprintw(inter.win, 1, (inter.weight / 2) - 7, "COMMANDS LIST:");
-	wattroff(inter.win, COLOR_PAIR(10));
-	fd = open("commands.txt", O_RDONLY);
+	fd = draw_comm(inter);
 	while ((read(fd, buf, 1)) > 0)
 	{
 		comm[count] = buf[0];

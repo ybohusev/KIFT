@@ -17,7 +17,6 @@ t_mess	*new_mess(char *you, char *mees, t_interface inter)
 	t_mess	*tmp;
 
 	tmp = (t_mess*)malloc(sizeof(t_mess));
-
 	tmp->you = (char*)malloc(strlen(you) + 1);
 	tmp->you[strlen(you)] = '\0';
 	strcpy(tmp->you, you);

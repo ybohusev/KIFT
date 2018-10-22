@@ -12,17 +12,17 @@
 
 #include "client.h"
 
-static void			print_help(t_interface help, char *str)
+void		print_help(t_interface help, char *str)
 {
 	wclear(help.win);
 	wattron(help.win, COLOR_PAIR(1));
-	wborder(help.win, '|' , '|', '-', '-', '+', '+', '+', '+');
+	wborder(help.win, '|', '|', '-', '-', '+', '+', '+', '+');
 	wattroff(help.win, COLOR_PAIR(10));
 	mvwprintw(help.win, 1, 1, "%s", str);
 	wrefresh(help.win);
 }
 
-static const char	*recogn(ps_decoder_t *ps, int32 k, t_interface help)
+const char	*recogn(ps_decoder_t *ps, int32 k, t_interface help)
 {
 	char const	*hyp;
 
@@ -32,13 +32,14 @@ static const char	*recogn(ps_decoder_t *ps, int32 k, t_interface help)
 	return (hyp);
 }
 
-const char			*recognize_from_microphone(ps_decoder_t *ps, ad_rec_t *ad, t_interface help)
+const char	*recognize_from_microphone(ps_decoder_t *ps,
+						ad_rec_t *ad, t_interface help)
 {
-	int16 adbuf[4096];
-	uint8 cur_vad_state;
-	uint8 vad_state;
-	int32 k;
-	char const *hyp;
+	int16		adbuf[4096];
+	uint8		cur_vad_state;
+	uint8		vad_state;
+	int32		k;
+	char const	*hyp;
 
 	if (ad_start_rec(ad) < 0)
 		E_FATAL("FAILED TO START RECORDING\n");

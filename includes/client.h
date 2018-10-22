@@ -6,26 +6,26 @@
 /*   By: ybohusev <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/22 14:10:46 by ybohusev          #+#    #+#             */
-/*   Updated: 2018/10/22 14:10:49 by ybohusev         ###   ########.fr       */
+/*   Updated: 2018/10/22 14:22:33 by ybohusev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLIENT_H
 # define CLIENT_H
 
-#include "common.h"
-#include <pocketsphinx.h>
-#include <sphinxbase/ad.h>
-#include <sphinxbase/err.h>
-#include <ncurses.h>
-#include <sys/ioctl.h>
+# include "common.h"
+# include <pocketsphinx.h>
+# include <sphinxbase/ad.h>
+# include <sphinxbase/err.h>
+# include <ncurses.h>
+# include <sys/ioctl.h>
 
 typedef struct				s_interface
 {
 	WINDOW					*win;
 	int						height;
 	int						weight;
-}							t_interface;	
+}							t_interface;
 
 typedef struct				s_windows
 {
@@ -41,7 +41,7 @@ typedef struct				s_mess
 	char					*you;
 	char					*mees;
 	char					*del;
-	struct	s_mess			*next;
+	struct s_mess			*next;
 }							t_mess;
 
 typedef struct				s_sphinx
@@ -62,15 +62,20 @@ typedef struct				s_sock
 
 t_sock						init_sock(void);
 t_sphinx					init_sphinx(void);
-const 						char* recognize_from_microphone(ps_decoder_t *ps, ad_rec_t *ad, t_interface help);
-int							send_command(char const *decoded_speech, char *answer);
-void						interface(char const *command, char *answer, t_interface inter, t_mess	**l);
+const char					*recognize_from_microphone(ps_decoder_t *ps,
+										ad_rec_t *ad, t_interface help);
+int							send_command(char const *decoded_speech,
+														char *answer);
+void						interface(char const *command, char *answer,
+										t_interface inter, t_mess	**l);
 
 t_windows					init_ncur(void);
 void						print_list_commands(t_interface inter);
 void						del_windows(t_windows del);
-t_mess						*new_mess(char *you, char *mees, t_interface inter);
-void						add_mess(t_mess **l, char *you, char *mees, t_interface inter);
+t_mess						*new_mess(char *you, char *mees,
+											t_interface inter);
+void						add_mess(t_mess **l, char *you, char *mees,
+											t_interface inter);
 void						del_mess(t_mess *l);
 void						del_all(t_mess *l);
 

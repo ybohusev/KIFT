@@ -37,6 +37,10 @@ SRC_CLIENT += mic.c
 SRC_CLIENT += send_to_server.c
 SRC_CLIENT += init_sock.c
 SRC_CLIENT += interface.c
+SRC_CLIENT += print_commands.c
+SRC_CLIENT += init_ncurses.c
+SRC_CLIENT += del_windows.c
+SRC_CLIENT += lists.c
 
 CLIENT_SRCS = $(addprefix $(DIR_CLIENT_SRC)/,$(SRC_CLIENT))
 CLIENT_OBJS = $(addprefix $(DIR_CLIENT_OBJ)/,$(SRC_CLIENT:.c=.o))

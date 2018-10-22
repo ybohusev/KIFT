@@ -1,50 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   interface.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybohusev <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/10/22 14:03:39 by ybohusev          #+#    #+#             */
+/*   Updated: 2018/10/22 14:03:40 by ybohusev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "client.h"
 
-t_mess        *new_mess(char *you, char *mees)
-{
-    t_mess  *tmp;
-
-    tmp = (t_mess*)malloc(sizeof(t_mess));
-
-    tmp->you = (char*)malloc(strlen(you) + 1);
-    tmp->you[strlen(you)] = '\0';
-    strcpy(tmp->you, you);
-    tmp->mees = (char*)malloc(strlen(mees) + 1);
-    tmp->mees[strlen(mees)] = '\0';
-    strcpy(tmp->mees, mees);
-    tmp->del = (char*)malloc(mess.weight - 4 + 1);
-    tmp->del[mess.weight - 4] = '\0';
-    memset(tmp->del, '=', mess.weight - 4);
-    tmp->x = 2;
-    tmp->y = mess.height - 4;
-    tmp->next = NULL;
-    return (tmp);
-}
-
-void    add_mess(t_mess **l, char *you, char *mees)
-{
-	t_mess	*tmp;
-
-	tmp = new_mess(you, mees);
-	if (*l == NULL)
-	{
-		*l = tmp;
-		return ;
-	}
-	tmp->next = *l;
-	*l = tmp;
-}
-
-void	del_mess(t_mess *l)
-{
-	free(l->you);
-	free(l->mees);
-	free(l->del);
-	free(l);
-	l = NULL;
-}
-
-void	change_coords(t_mess *l)
+static void	change_coords(t_mess *l)
 {
 	if (l->next == NULL)
 		return ;
@@ -61,34 +29,34 @@ void	change_coords(t_mess *l)
 	}
 }
 
-void	print_mess(t_mess *l)
+static void	print_mess(t_mess *l, t_interface inter)
 {
 	while (l)
 	{
-		wattron(mess.mess, COLOR_PAIR(2));
-		mvwprintw(mess.mess, l->y, 2, "YOU: %s", l->you);
-		wattroff(mess.mess, COLOR_PAIR(10));
-		wattron(mess.mess, COLOR_PAIR(11));
-		mvwprintw(mess.mess, l->y + 1, 2, "%s", l->mees);
-		wattroff(mess.mess, COLOR_PAIR(10));
-		wattron(mess.mess, COLOR_PAIR(3));
-		mvwprintw(mess.mess, l->y + 2, 2, "%s", l->del);
-		wattroff(mess.mess, COLOR_PAIR(10));
+		wattron(inter.win, COLOR_PAIR(2));
+		mvwprintw(inter.win, l->y, 2, "YOU: %s", l->you);
+		wattroff(inter.win, COLOR_PAIR(10));
+		wattron(inter.win, COLOR_PAIR(11));
+		mvwprintw(inter.win, l->y + 1, 2, "%s", l->mees);
+		wattroff(inter.win, COLOR_PAIR(10));
+		wattron(inter.win, COLOR_PAIR(3));
+		mvwprintw(inter.win, l->y + 2, 2, "%s", l->del);
+		wattroff(inter.win, COLOR_PAIR(10));
 		l = l->next;		
 	}
 }
 
-void	interface(char const *command, char *answer, t_mess **l)
+void		interface(char const *command, char *answer, t_interface inter, t_mess	**l)
 {
 	if (command != NULL && *command != 0)
 	{
-		wclear(mess.mess);
-		wattron(mess.mess, COLOR_PAIR(1));
-    	wborder(mess.mess, '|' , '|', '-', '-', '+', '+', '+', '+');
-    	wattroff(mess.mess, COLOR_PAIR(10));
-		add_mess(l, (char* const)command, answer);
+		wclear(inter.win);
+		wattron(inter.win, COLOR_PAIR(1));
+		wborder(inter.win, '|' , '|', '-', '-', '+', '+', '+', '+');
+		wattroff(inter.win, COLOR_PAIR(10));
+		add_mess(l, (char* const)command, answer, inter);
 		change_coords(*l);
-		print_mess(*l);
+		print_mess(*l, inter);
 	}
-	wrefresh(mess.mess);
+	wrefresh(inter.win);
 }
